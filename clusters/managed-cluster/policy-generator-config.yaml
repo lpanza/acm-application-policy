@@ -1,0 +1,18 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: policy-generator-nginx-alpine
+policyDefaults:
+  namespace: policies
+  namespaceSelector:
+    include:
+    - nginx-alpine
+  placement:
+    clusterSelectors:
+      env: "testing"
+  remediationAction: enforce
+policies:
+  - name: nginx-alpine
+    manifests:
+      - path: nginx-alpine.yaml

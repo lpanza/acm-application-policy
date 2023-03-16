@@ -1,0 +1,18 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: policy-generator-nginx
+policyDefaults:
+  namespace: policies
+  namespaceSelector:
+    include:
+    - nginx
+  placement:
+    clusterSelectors:
+      local-cluster: "true"
+  remediationAction: enforce
+policies:
+  - name: nginx
+    manifests:
+      - path: nginx.yaml

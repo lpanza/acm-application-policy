@@ -1,0 +1,18 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: policy-generator-apache
+policyDefaults:
+  namespace: policies
+  namespaceSelector:
+    include:
+    - apache
+  placement:
+    clusterSelectors:
+      vendor: "OpenShift"
+  remediationAction: enforce
+policies:
+  - name: apache
+    manifests:
+      - path: apache.yaml
