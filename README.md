@@ -2,6 +2,7 @@
 This repo is just meant to test the capabilities of the ACM Subscriptions pointing to the PolicyGenerator from https://github.com/open-cluster-management-io/policy-generator-plugin
 
 # Please Note!
+For the purpose of this demo, the ManagedCluster has the following label: ```env=testing``` <br>
 In order for subscriptions to PolicyGenerator to work, you need to add the user to the right [ClusterRoleBinding](https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.7/html/applications/managing-applications#granting-subscription-admin-privilege):
 ```
 ---
