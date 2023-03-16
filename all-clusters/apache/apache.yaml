@@ -33,3 +33,40 @@ spec:
         name: apache
         resources: {}
 status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: apache
+  name: apache
+  namespace: apache
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: apache
+status:
+  loadBalancer: {}
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app: apache
+  name: apache
+  namespace: apache
+spec:
+  tls:
+    termination: edge
+  port:
+    targetPort: 8080
+  to:
+    kind: ""
+    name: apache
+    weight: null
+status: {}
