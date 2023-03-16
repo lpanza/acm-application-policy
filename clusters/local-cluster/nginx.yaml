@@ -28,7 +28,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: nginx
+      - image: docker.io/library/nginx:1.22.1
         name: nginx
         resources: {}
 status: {}

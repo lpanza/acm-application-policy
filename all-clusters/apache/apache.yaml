@@ -28,7 +28,7 @@ spec:
         app: apache
     spec:
       containers:
-      - image: apache
+      - image: docker.io/library/httpd:2.4.56
         name: apache
         resources: {}
 status: {}
