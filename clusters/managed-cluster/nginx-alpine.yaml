@@ -33,3 +33,40 @@ spec:
         name: nginx-alpine
         resources: {}
 status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx-alpine
+  name: nginx-alpine
+  namespace: nginx-alpine
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: nginx-alpine
+status:
+  loadBalancer: {}
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx-alpine
+  name: nginx-alpine
+  namespace: nginx-alpine
+spec:
+  tls:
+    termination: edge
+  port:
+    targetPort: 8080
+  to:
+    kind: ""
+    name: nginx-alpine
+    weight: null
+status: {}
