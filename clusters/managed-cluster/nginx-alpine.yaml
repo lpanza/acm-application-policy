@@ -28,7 +28,8 @@ spec:
         app: nginx-alpine
     spec:
       containers:
-      - image: docker.io/library/nginx:1.22.1-alpine
+      - image: docker.io/lpanza/tekton-cicd-test:6e0a8c3f1d41657c69b329c4fc279ec61b2ed6ea
+      # image: docker.io/library/nginx:1.22.1-alpine
         name: nginx-alpine
         resources: {}
 status: {}

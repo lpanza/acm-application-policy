@@ -28,7 +28,8 @@ spec:
         app: apache
     spec:
       containers:
-      - image: docker.io/library/httpd:2.4.56
+      - image: docker.io/lpanza/tekton-cicd-test:b79f0ae742cb485ab8073cde60e1f7c139de2232
+        #image: docker.io/library/httpd:2.4.56
         name: apache
         resources: {}
 status: {}
